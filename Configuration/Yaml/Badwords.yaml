@@ -1,0 +1,33 @@
+prototypes:
+  standard:
+    validatorsDefinition:
+      Badwords:
+        implementationClassName: 'Idleworks\FormBadwords\Mvc\Validation\BadwordsValidator'
+        formEditor:
+          iconIdentifier: form-validator
+          label: 'Badwords'
+    formElementsDefinition:
+      Text: &badwordsValidator
+        formEditor:
+          editors:
+            900:
+              selectOptions:
+                1752497154:
+                  value: Badwords
+                  label: 'Badwords'
+          propertyCollections:
+            validators:
+              1752497154:
+                identifier: Badwords
+                editors:
+                  100:
+                    identifier: header
+                    templateName: Inspector-CollectionElementHeaderEditor
+                    label: 'Badwords Validation'
+                  9999:
+                    identifier: removeButton
+                    templateName: Inspector-RemoveElementEditor
+      Textarea:
+        <<: *badwordsValidator
+      Email:
+        <<: *badwordsValidator

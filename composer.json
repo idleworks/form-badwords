@@ -1,0 +1,21 @@
+{
+	"name": "idleworks/form-badwords",
+	"description": "EXT:form validator to check user input against list of badwords",
+	"type": "typo3-cms-extension",
+	"authors": [
+		{
+			"name": "Philipp Idler",
+			"email": "philipp.idler@dkfz.de"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"Idleworks\\FormBadwords\\": "Classes"
+		}
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "form_badwords"
+		}
+	}
+}

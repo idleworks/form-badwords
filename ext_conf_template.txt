@@ -1,0 +1,2 @@
+// cat=Basic; type=string; label=Badwords file resource identifier: e.g. "1:protected/badwords.txt"
+badwordsFile = EXT:form_badwords/Resources/Private/Language/badwords.txt
