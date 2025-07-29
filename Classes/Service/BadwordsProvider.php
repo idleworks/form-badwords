@@ -17,9 +17,15 @@ class BadwordsProvider
         private readonly Configuration $configuration
     ) {
         try {
-            $resourceFactory = GeneralUtility::makeInstance(ResourceFactory::class);
-            $file = $resourceFactory->getFileObjectFromCombinedIdentifier($this->configuration->get('badwordsFile'));
-            $lines = preg_split("/\r\n|\n|\r/", $file->getContents());
+            if (str_starts_with($this->configuration->get('badwordsFile'), 'EXT:')) {
+                $file = GeneralUtility::getFileAbsFileName($this->configuration->get('badwordsFile'));
+                $lines = file($file);
+            } else {
+                $resourceFactory = GeneralUtility::makeInstance(ResourceFactory::class);
+                $file = $resourceFactory->getFileObjectFromCombinedIdentifier($this->configuration->get('badwordsFile'));
+                $content = $file->getContents();
+                $lines = preg_split("/\r\n|\n|\r/", $content);
+            }
             if (!empty($lines)) {
                 foreach ($lines as $line) {
                     if (str_starts_with('#', (string)$line)) {
