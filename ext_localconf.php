@@ -5,6 +5,9 @@ defined('TYPO3') or die;
 
 ExtensionManagementUtility::addTypoScriptSetup(trim('
     plugin.tx_form {
-        settings.yamlConfigurations.840 = EXT:form_badwords/Configuration/Yaml/Badwords.yaml
+        settings.yamlConfigurations.1753790607 = EXT:form_badwords/Configuration/Yaml/Badwords.yaml
+    }
+    module.tx_form {
+        settings.yamlConfigurations.1753790607 = EXT:form_badwords/Configuration/Yaml/Badwords.yaml
     }
 '));
