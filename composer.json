@@ -1,6 +1,6 @@
 {
 	"name": "idleworks/form-badwords",
-	"description": "EXT:form validator to check user input against list of badwords",
+	"description": "Form: Badwords validator",
 	"type": "typo3-cms-extension",
 	"authors": [
 		{
