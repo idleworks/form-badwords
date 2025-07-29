@@ -21,7 +21,7 @@ class BadwordsValidator extends AbstractValidator
 
             $this->addError(
                 $this->translateErrorMessage(
-                    'LLL:EXT:form_badwords/Resources/Private/Language/Form/locallang.xlf:validator.badwords.notvalid',
+                    'LLL:EXT:form_badwords/Resources/Private/Language/locallang.xlf:validator.badwords.notvalid',
                     'FormBadwords'
                 ),
                 1752497154
