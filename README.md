@@ -34,6 +34,6 @@ Comments starting with a hash (#) are also possible and are excluded from proces
     # Matches word parts (e.g. "send nudes")
     nude
     # Matches only the word "nude"
-    /b(nude)/n
+    \b(nude)\b
     # Matches all email address of mailinator.com
     @mailinator\.com$
