@@ -13,7 +13,7 @@ The required TypoScript is automatically included in your setup.
 
 ## Configuration
 
-### Add the Validator to Form Fields
+### Add the validator to form fields
 Each form field you want to validate must be equipped with the new Badwords validator.
 You can configure this in the Form Manager within the TYPO3 backend.
 
@@ -22,6 +22,18 @@ You can configure this in the Form Manager within the TYPO3 backend.
 This extension comes with an example bad words list. You can customize it to suit your specific needs.
 To do this, update the path to the badwords file in the extension configuration using the Install Tool.
 
-**Important:**
-If you place the badwords file in a publicly accessible directory (e.g., fileadmin), it may be indexed by search engines — which is likely not desirable.
-Therefore, make sure to protect the file using an .htaccess rule or equivalent server configuration.
+> Important:
+>
+> If you place the badwords file in a publicly accessible directory (e.g., fileadmin), it may be indexed by search engines — which is likely not desirable. Therefore, make sure to protect the file using an .htaccess rule or equivalent server configuration.
+
+You can use regular expressions to tune your badwords list.
+Comments starting with a hash (#) are also possible and are excluded from processing.
+
+#### Examples
+
+    # Matches word parts (e.g. "send nudes")
+    nude
+    # Matches only the word "nude"
+    /b(nude)/n
+    # Matches all email address of mailinator.com
+    @mailinator\.com$
